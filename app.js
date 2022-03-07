@@ -21,7 +21,7 @@ bot.command('negozio',ctx =>{
 })
 bot.command('contatore',ctx =>{
     let sussyd=ctx.chat.id;
-    bot.telegram.sendMessage(ctx.chat.id, 'Hai ottenuto un mio prodotto',contatore, ' volte')
+    bot.telegram.sendMessage(ctx.chat.id, 'Hai ottenuto un mio prodotto'+contatore+' volte')
 })
 
 bot.action('ravioli', ctx =>{
