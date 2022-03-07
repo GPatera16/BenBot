@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "telegraf": "^4.7.0"
+  },
+  "name": "giovanni",
+  "version": "1.0.0",
+  "description": "ciao",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}
