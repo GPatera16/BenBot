@@ -3,7 +3,7 @@ const {Telegraf} = require('telegraf');
 
 const bot = new Telegraf('5164325716:AAGi22CABMitcO3HaG7HI_5wCZIyQ8_nY-g');
 
-bot.command('Negozio',ctx =>{
+bot.command('negozio',ctx =>{
     let sussyd=ctx.chat.id;
     bot.telegram.sendMessage(ctx.chat.id, 'Benvenuto al negozio di Giovanni Rana, Cosa le posso offrire?',
     {
