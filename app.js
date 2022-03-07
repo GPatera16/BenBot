@@ -4,9 +4,10 @@ const {Telegraf} = require('telegraf');
 const bot = new Telegraf('5164325716:AAGi22CABMitcO3HaG7HI_5wCZIyQ8_nY-g');
 
 let contatore = 0;
+let giovanni = 0;
+let pasqualeprattico="Giovanni";
 
 bot.command('negozio',ctx =>{
-    let sussyd=ctx.chat.id;
     bot.telegram.sendMessage(ctx.chat.id, 'Benvenuto al negozio di Giovanni Rana, Cosa le posso offrire?',
     {
         reply_markup:{
@@ -19,9 +20,17 @@ bot.command('negozio',ctx =>{
         }
     })
 })
+
 bot.command('contatore',ctx =>{
-    let sussyd=ctx.chat.id;
     bot.telegram.sendMessage(ctx.chat.id, 'Hai ottenuto un mio prodotto '+contatore+' volte')
+})
+
+bot.command('giovcounter',ctx =>{
+    bot.telegram.sendMessage(ctx.chat.id, 'Siete basati perché avete detto "Giovanni" '+contatore+' volte')
+})
+
+bot.hears(pasqualeprattico.toLowerCase(),ctx =>{
+    giovanni=giovanni+1;
 })
 
 bot.action('ravioli', ctx =>{
