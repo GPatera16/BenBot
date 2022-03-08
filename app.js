@@ -26,7 +26,7 @@ bot.command('contatore',ctx =>{
 })
 
 bot.command('giovcounter',ctx =>{
-    bot.telegram.sendMessage(ctx.chat.id, 'Siete basati perché avete detto "Giovanni" '+contatore+' volte')
+    bot.telegram.sendMessage(ctx.chat.id, 'Siete basati perché avete detto "Giovanni" '+giovanni+' volte')
 })
 
 bot.hears("giovanni",ctx =>{giovanni=giovanni+1;})
