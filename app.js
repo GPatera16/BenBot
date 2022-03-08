@@ -29,11 +29,8 @@ bot.command('giovcounter',ctx =>{
     bot.telegram.sendMessage(ctx.chat.id, 'Siete basati perché avete detto "Giovanni" '+contatore+' volte')
 })
 
-bot.hears(message.text,ctx =>{
-    if(message.text.toLowerCase()=='giovanni'){
-        giovanni=giovanni+1;
-    }
-})
+bot.hears('giovanni',ctx =>{giovanni=giovanni+1;})
+bot.hears('Giovanni',ctx =>{giovanni=giovanni+1;})
 
 bot.action('ravioli', ctx =>{
     contatore=contatore+1;
