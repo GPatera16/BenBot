@@ -1,55 +1,25 @@
 
 const {Telegraf} = require('telegraf');
 
-const bot = new Telegraf('5164325716:AAGi22CABMitcO3HaG7HI_5wCZIyQ8_nY-g');
+const bot = new Telegraf('5106100287:AAFMWVg5r8532NKLGc1XDFpbtU0ubj_hWEs');
 
-let contatore = 0;
-let giovanni = 0;
-let pasqualeprattico="Giovanni";
 
-bot.command('negozio',ctx =>{
-    bot.telegram.sendMessage(ctx.chat.id, 'Benvenuto al negozio di Giovanni Rana, Cosa le posso offrire?',
-    {
-        reply_markup:{
-            inline_keyboard:[
-                [
-                    {text:'Ravioli', callback_data:'ravioli'},
-                    {text:'Tortellini', callback_data:'tortellini'}
-                ]
-            ]
-        }
-    })
+bot.command('ben',ctx =>{
+    let response = Math.floor(Math.random() * 4)+1;
+    switch(response) {
+        case 1:
+          bot.telegram.sendMessage(ctx.chat.id, 'Yes')
+          break;
+        case 2:
+          bot.telegram.sendMessage(ctx.chat.id, 'No')
+          break;
+        case 3:
+            bot.telegram.sendMessage(ctx.chat.id, 'ugh')
+            break;
+        case 4:
+            bot.telegram.sendMessage(ctx.chat.id, 'hoho')
+            break;
+      }
 })
-
-bot.command('contatore',ctx =>{
-    bot.telegram.sendMessage(ctx.chat.id, 'Hai ottenuto un mio prodotto '+contatore+' volte')
-})
-
-bot.command('giovcounter',ctx =>{
-    bot.telegram.sendMessage(ctx.chat.id, 'Siete basati perché avete detto "Giovanni" '+giovanni+' volte')
-})
-
-bot.hears("giovanni",ctx =>{giovanni=giovanni+1;})
-bot.hears("Giovanni",ctx =>{giovanni=giovanni+1;})
-
-bot.action('ravioli', ctx =>{
-    contatore=contatore+1;
-    bot.telegram.sendMessage(ctx.chat.id,'Ecco a lei')
-    bot.telegram.sendPhoto(ctx.chat.id,{
-        source:"res/ravioli.png"
-    })
-})
-bot.action('tortellini', ctx =>{
-    contatore=contatore+1;
-    bot.telegram.sendMessage(ctx.chat.id,'Ecco a lei')
-    bot.telegram.sendPhoto(ctx.chat.id,{
-        source:"res/tortellini.jpg"
-    })
-})
-
-bot.action('two',ctx=>{
-    ctx.reply("ciao")
-})
-
 
 bot.launch();
